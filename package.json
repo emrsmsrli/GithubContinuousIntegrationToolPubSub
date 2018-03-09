@@ -1,0 +1,24 @@
+{
+  "name": "github-persistence",
+  "version": "1.0.5",
+  "dependencies": {
+    "request": "^2.83.0",
+    "mysql": "^2.15.0",
+    "dotenv": "^5.0.0",
+    "path": "^0.12.7",
+    "@google-cloud/storage": "^1.6.0"
+  },
+  "scripts": {
+    "prepublish": "babel src/ -d out/ && cp src/config.json out/config.json && cp package.json out/package.json",
+    "publish": "gcloud alpha functions deploy github-persistence --entry-point=githubPersistence --source out/",
+    "postpublish": "rm -r out/",
+    "prepare": "npm run build",
+    "flow": "flow"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "flow-bin": "^0.65.0"
+  }
+}

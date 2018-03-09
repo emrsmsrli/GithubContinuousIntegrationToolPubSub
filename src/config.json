@@ -1,0 +1,6 @@
+{
+  "CSQL_HOST": "/cloudsql/linovi-188707:us-central1:github-commit-db",
+  "CSQL_USER": "root",
+  "CSQL_PASS": "linovi",
+  "CSQL_DB": "commits"
+}
